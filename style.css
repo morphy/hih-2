@@ -1,0 +1,41 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body
+{
+  line-height: 1;
+}
+
+ul, ol
+{
+  list-style: none;
+}
+
+table
+{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+thead, tbody
+{
+  display: block;
+}
+
+tr
+{
+  display: flex;
+}
+
+td, th
+{
+  display: block;
+  flex: 0 0 33.3333%;
+  text-align: center;
+}

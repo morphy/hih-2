@@ -5,9 +5,21 @@
       <head>
         <meta charset="utf-8"/>
         <title></title>
+        <link rel="stylesheet" href="style.css"/>
       </head>
       <body>
-        <xsl:apply-templates select="data/languages/lang"/>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Full name</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="data/languages/lang"/>
+          </tbody>
+        </table>
         <xsl:apply-templates select="data/libs/lib"/>
         <xsl:apply-templates select="data/tools"/>
         <xsl:apply-templates select="data/browsers/browser"/>
@@ -16,7 +28,7 @@
   </xsl:template>
 
   <xsl:template match="lang">
-    <div>
+    <tr>
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="@typing = 'static'">static</xsl:when>
@@ -24,10 +36,10 @@
           <xsl:otherwise>none</xsl:otherwise>
         </xsl:choose>
       </xsl:attribute>
-      <xsl:value-of select="name"/>
-      <xsl:value-of select="fullname"/>
-      <xsl:value-of select="usage"/>
-    </div>
+      <td><xsl:value-of select="name"/></td>
+      <td><xsl:value-of select="fullname"/></td>
+      <td><xsl:value-of select="usage"/></td>
+    </tr>
   </xsl:template>
 
   <xsl:template match="lib">
