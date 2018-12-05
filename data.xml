@@ -65,8 +65,10 @@
   <tools>
     <tool usability="5">
       <name>
-        <full>Gulp</full>
-        <logo src="http://twoja-naklejka.pl/image/cache/data/Tuning%20druk/7-500x500.jpg"/>
+        <full>Gulp
+          <short>Gulp</short>
+        </full>
+        <logo src="img/gulp.svg"/>
       </name>
       <version vr="4.0.0 2017"/>
     </tool>
@@ -75,7 +77,7 @@
         <full>Node Package Manager
           <short>NPM</short>
         </full>
-        <logo src="http://twoja-naklejka.pl/image/cache/data/Tuning%20druk/7-500x500.jpg"/>
+        <logo src="img/npm.svg"/>
       </name>
       <version vr="6.4.0 2018"/>
     </tool>
@@ -84,7 +86,7 @@
         <full>Emmet Cheat Sheet
           <short>ECS</short>
         </full>
-        <logo src="http://twoja-naklejka.pl/image/cache/data/Tuning%20druk/7-500x500.jpg"/>
+        <logo src="img/ecs.svg"/>
       </name>
       <version vr="2.4.3 2016"/>
     </tool>

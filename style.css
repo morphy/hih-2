@@ -4,6 +4,7 @@
   padding: 0;
   border: 0;
   outline: 0;
+  box-sizing: border-box;
 }
 
 body
@@ -16,11 +17,15 @@ ul, ol
   list-style: none;
 }
 
+/* Table */
+
 table
 {
   display: block;
   width: 80%;
-  margin: 0 auto;
+  margin: 100px auto;
+  background: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 thead, tbody
@@ -31,11 +36,188 @@ thead, tbody
 tr
 {
   display: flex;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+thead tr
+{
+  border-top: none;
+}
+
+tr:hover
+{
+  background: #eee;
+  transition-duration: .28s;
 }
 
 td, th
 {
   display: block;
-  flex: 0 0 33.3333%;
-  text-align: center;
+  flex: 1;
+  padding: 14px 18px;
+  color: rgba(0,0,0,.87);
+  font: 400 13px/20px Roboto;
+  text-align: left;
+}
+
+th
+{
+  color: rgba(0,0,0,.54);
+  font: 700 13px/20px Roboto;
+}
+
+.green
+{
+  color: rgb(76,175,80);
+}
+
+/* Cards */
+
+.cards
+{
+  display: flex;
+}
+
+.tool
+{
+  flex: 0 0 33.333333%;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+}
+
+.tool img
+{
+  width: 48px;
+  height: 48px;
+}
+
+.tool .position
+{
+  padding: 0 10px;
+  font: 400 16px/20px Roboto;
+  color: rgba(0,0,0,.87);
+}
+
+.tool .name
+{
+  margin-left: 16px;
+}
+
+.tool .name div:first-child
+{
+  font: 400 16px/20px Roboto;
+  color: rgba(0,0,0,.87);
+}
+
+.tool .name div:last-child
+{
+  font: 400 14px/18px Roboto;
+  color: rgba(0,0,0,.54);
+}
+
+.tool .usab
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin: 0 auto 4px auto;
+  font: 500 12px/12px Roboto;
+  color: #fff;
+  background: #ff4081;
+  border-radius: 50%;
+}
+
+.tool span
+{
+  font: 400 14px/18px Roboto;
+  color: rgba(0,0,0,.54);
+}
+
+.tool .uav
+{
+  margin-left: 16px;
+}
+
+/* Gallery */
+
+.gallery
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.img
+{
+  flex: 0 0 510px;
+  padding: 80px;
+}
+
+.img > div
+{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  background: #fff;
+}
+
+.img .im
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+}
+
+.img > div > div img
+{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.img h1
+{
+  font: 300 24px/28px Roboto;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  margin-top: -38px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 1000;
+}
+
+.img p
+{
+  width: 100%;
+  color: rgba(0,0,0,.54);
+  font: 400 14px/18px Roboto;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.img .link a
+{
+  display: inline-block;
+  padding: 0px 16px;
+  font: 500 14px/36px Roboto;
+  color: #3f51b5;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 0.2s;
+}
+
+.img .link a:hover
+{
+  background: rgba(158,158,158,.2);
+}
+
+.img .link
+{
+  padding: 8px;
 }
