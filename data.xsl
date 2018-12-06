@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:variable name="clicker">
+    <a class="clicker" href="#"/>
+  </xsl:variable>
   <xsl:template match="/">
     <html>
       <head>
         <meta charset="utf-8"/>
-        <title></title>
+        <title>XSLT</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
         <link rel="stylesheet" href="style.css"/>
       </head>
@@ -21,6 +24,7 @@
             <xsl:apply-templates select="data/languages/lang"/>
           </tbody>
         </table>
+        <xsl:copy-of select="$clicker"/>
         <table>
           <thead>
             <tr>
@@ -36,16 +40,63 @@
             <xsl:apply-templates select="data/libs/lib"/>
           </tbody>
         </table>
+        <xsl:copy-of select="$clicker"/>
         <div class="cards">
           <xsl:apply-templates select="data/tools"/>
         </div>
+        <xsl:copy-of select="$clicker"/>
         <div class="gallery">
           <xsl:apply-templates select="data/browsers/browser"/>
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>UNIQID</th>
+              <th>Name</th>
+              <th>Vendor</th>
+              <th>Version</th>
+              <th>Languages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="data/ides/ide[@used='yes']"/>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>First lang</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="data/languages/lang[1]"/>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>First lib</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="data/libs/lib[1]"/>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>First ide</th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="data/ides/ide[1]"/>
+          </tbody>
+        </table>
+        <xsl:apply-templates select="data/person[@id='author']"/>
+        <xsl:call-template name="message"/>
       </body>
     </html>
   </xsl:template>
-
   <xsl:template match="lang">
     <tr>
       <xsl:attribute name="class">
@@ -60,16 +111,14 @@
       <td><xsl:value-of select="usage"/></td>
     </tr>
   </xsl:template>
-
   <xsl:template match="lib">
     <tr>
-      <td><xsl:number value="position()" format="1"/></td>
+      <td><xsl:number value="position()" format="a"/></td>
       <td><xsl:value-of select="name"/></td>
       <td><xsl:value-of select="@lang"/></td>
       <xsl:apply-templates select="features"/>
     </tr>
   </xsl:template>
-
   <xsl:template match="features">
     <td>
       <xsl:if test="plugins = 'yes'">
@@ -90,7 +139,6 @@
       <xsl:value-of select="cdn"/>
     </td>
   </xsl:template>
-
   <xsl:template match="tools">
     <xsl:for-each select="tool">
       <xsl:sort data-type="number" select="@usability"/>
@@ -110,7 +158,6 @@
       </div>
     </xsl:for-each>
   </xsl:template>
-
   <xsl:template match="name">
     <img>
       <xsl:attribute name="src">
@@ -127,13 +174,11 @@
       </div>
     </div>
   </xsl:template>
-
   <xsl:template match="@vr">
     <span>
       <xsl:value-of select="translate(., ' ', ':')"/>
     </span>
   </xsl:template>
-
   <xsl:template match="browser">
     <div class="img">
       <div>
@@ -145,6 +190,7 @@
         </h1>
         <p>
           <xsl:apply-templates select="date-and-version"/>
+          <xsl:apply-templates select="number-of-users"/>
         </p>
         <div class="link">
           <a>
@@ -157,21 +203,58 @@
       </div>
     </div>
   </xsl:template>
-
   <xsl:template match="date-and-version">
     <xsl:text>version: </xsl:text>
-    <xsl:value-of select="."/>
+    <xsl:value-of select="translate(., ' ', '.')"/>
     <br/>
     <xsl:text>release date: </xsl:text>
     <xsl:value-of select="@date"/>
   </xsl:template>
-
+  <xsl:template match="number-of-users">
+    <br/>
+    <xsl:text>number of users: </xsl:text>
+    <xsl:value-of select="format-number(., '###,###')"/>
+  </xsl:template>
   <xsl:template match="@engine">
     <img alt="an image">
       <xsl:attribute name="src">
         <xsl:value-of select="concat('img/', ., '.png')"/>
       </xsl:attribute>
     </img>
+  </xsl:template>
+  <xsl:template name="message">
+    <p class="msg">Created by Mateusz Wasik</p>
+  </xsl:template>
+  <xsl:template match="ide">
+    <tr>
+      <td>
+        <xsl:value-of select="generate-id()"/>
+      </td>
+      <td>
+        <xsl:value-of select="name"/>
+      </td>
+      <td>
+        <xsl:value-of select="vendor"/>
+      </td>
+      <td>
+        <xsl:value-of select="concat('version: ', format-number(version, '000'))"/>
+      </td>
+      <td>
+        <xsl:apply-templates select="lngs"/>
+      </td>
+    </tr>
+  </xsl:template>
+  <xsl:template match="lngs">
+    <xsl:value-of select="translate(., ' ', ',')"/>
+  </xsl:template>
+  <xsl:template match="person[@id='author']">
+    <div class="author">
+      <xsl:text>Author of document: </xsl:text>
+      <xsl:for-each select="*">
+        <xsl:value-of select="."/>
+        <xsl:text> </xsl:text>
+      </xsl:for-each>
+    </div>
   </xsl:template>
 
 

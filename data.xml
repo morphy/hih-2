@@ -92,46 +92,62 @@
     </tool>
   </tools>
   <ides>
-    <ide>
+    <ide used="yes">
       <name>Visual Studio</name>
       <vendor>Microsoft</vendor>
-      <version>15.8.3</version>
+      <version>15</version>
       <lngs>C# C++ Visual_Basic J# ASP.NET F#</lngs>
     </ide>
-    <ide>
+    <ide used="yes">
       <name>Atom IDE</name>
       <vendor>GitHub</vendor>
-      <version>1.32.2</version>
+      <version>1</version>
       <lngs>C# C++ XML HTML CSS PHP JS SQL</lngs>
     </ide>
-    <ide>
+    <ide used="yes">
       <name>Zend Studio</name>
       <vendor>Zend Technologies</vendor>
-      <version>10.6.0</version>
+      <version>10</version>
       <lngs>PHP</lngs>
+    </ide>
+    <ide used="no">
+      <name>Dev-C++</name>
+      <vendor>Bloodshed Software</vendor>
+      <version>45</version>
+      <lngs>C C++</lngs>
     </ide>
   </ides>
   <browsers>
     <browser engine="blink">
       <title>Chrome</title>
       <company>Google</company>
-      <date-and-version date="2017-05-06">1.2.3</date-and-version>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
       <number-of-users>234124</number-of-users>
       <website link="https://www.google.com/intl/pl_ALL/chrome/">Chrome website</website>
     </browser>
     <browser engine="gecko">
       <title>Firefox</title>
       <company>Mozilla</company>
-      <date-and-version date="2017-05-06">1.2.3</date-and-version>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
       <number-of-users>843453</number-of-users>
       <website link="https://www.mozilla.org/pl/firefox/">Firefox website</website>
     </browser>
     <browser engine="webkit">
       <title>Safari</title>
       <company>Apple</company>
-      <date-and-version date="2017-05-06">1.2.3</date-and-version>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
       <number-of-users>565674</number-of-users>
       <website link="https://www.apple.com/safari/">Safari website</website>
     </browser>
   </browsers>
+  <person id="author">
+    <name>Mateusz</name>
+    <surname>Wasik</surname>
+    <city>Gdańsk</city>
+  </person>
+  <person id="nobody-special">
+    <name>John</name>
+    <surname>Doe</surname>
+    <city>Idontknowville</city>
+  </person>
 </data>
