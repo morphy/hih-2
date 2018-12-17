@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" indent="yes"/>
   <xsl:variable name="clicker">
     <a class="clicker" href="#"/>
   </xsl:variable>
@@ -7,8 +8,8 @@
     <html>
       <head>
         <meta charset="utf-8"/>
-        <title>XSLT</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+        <title>XSLT 1</title>
+        <link rel="stylesheet" href="font.css"/>
         <link rel="stylesheet" href="style.css"/>
       </head>
       <body>
@@ -65,31 +66,31 @@
         <table>
           <thead>
             <tr>
-              <th>First lang</th>
+              <th>Fav lang</th>
             </tr>
           </thead>
           <tbody>
-            <xsl:apply-templates select="data/languages/lang[1]"/>
+            <xsl:apply-templates select="data/languages/lang[5]"/>
           </tbody>
         </table>
         <table>
           <thead>
             <tr>
-              <th>First lib</th>
+              <th>Fav lib</th>
             </tr>
           </thead>
           <tbody>
-            <xsl:apply-templates select="data/libs/lib[1]"/>
+            <xsl:apply-templates select="data/libs/lib[2]"/>
           </tbody>
         </table>
         <table>
           <thead>
             <tr>
-              <th>First ide</th>
+              <th>Fav ide</th>
             </tr>
           </thead>
           <tbody>
-            <xsl:apply-templates select="data/ides/ide[1]"/>
+            <xsl:apply-templates select="data/ides/ide[2]"/>
           </tbody>
         </table>
         <xsl:apply-templates select="data/person[@id='author']"/>
@@ -223,7 +224,7 @@
     </img>
   </xsl:template>
   <xsl:template name="message">
-    <p class="msg">Created by Mateusz Wasik</p>
+    <p class="msg">Copyright Mateusz Wasik</p>
   </xsl:template>
   <xsl:template match="ide">
     <tr>
@@ -249,38 +250,19 @@
   </xsl:template>
   <xsl:template match="person[@id='author']">
     <div class="author">
-      <xsl:text>Author of document: </xsl:text>
+      <xsl:text>Name, surname, city: </xsl:text>
       <xsl:for-each select="*">
         <xsl:value-of select="."/>
         <xsl:text> </xsl:text>
       </xsl:for-each>
+      <br/>
+      <xsl:text>(</xsl:text>
+      <xsl:value-of select="system-property('xsl:vendor')"/>
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="system-property('xsl:version')"/>
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="system-property('xsl:vendor-url')"/>
+      <xsl:text>)</xsl:text>
     </div>
   </xsl:template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </xsl:stylesheet>
