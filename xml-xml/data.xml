@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data.xsl"?>
+<data>
+  <languages>
+    <lang typing="static">
+      <name>C++</name>
+      <fullname>C++</fullname>
+      <usage>Local</usage>
+    </lang>
+    <lang typing="dynamic">
+      <name>PHP</name>
+      <fullname>PHP Hypertext Preprocessor</fullname>
+      <usage>Backend</usage>
+    </lang>
+    <lang>
+      <name>HTML</name>
+      <fullname>HyperText Markup Language</fullname>
+      <usage>Frontend</usage>
+    </lang>
+    <lang>
+      <name>CSS</name>
+      <fullname>Cascading Style Sheets</fullname>
+      <usage>Frontend</usage>
+    </lang>
+    <lang typing="dynamic">
+      <name>JS</name>
+      <fullname>JavaScript</fullname>
+      <usage>Both</usage>
+    </lang>
+  </languages>
+  <libs>
+    <lib lang="js" usability="6">
+      <name>jQuery</name>
+      <features>
+        <plugins>yes</plugins>
+        <cli>no</cli>
+        <cdn>yes</cdn>
+      </features>
+    </lib>
+    <lib lang="js" usability="10">
+      <name>AngularJS</name>
+      <features>
+        <plugins>yes</plugins>
+        <cli>yes</cli>
+        <cdn>yes</cdn>
+      </features>
+    </lib>
+    <lib lang="php" usability="7">
+      <name>ZendFramework</name>
+      <features>
+        <plugins>yes</plugins>
+        <cli>yes</cli>
+        <cdn>no</cdn>
+      </features>
+    </lib>
+    <lib lang="css" usability="7">
+      <name>Animate.css</name>
+      <features>
+        <plugins>no</plugins>
+        <cli>no</cli>
+        <cdn>no</cdn>
+      </features>
+    </lib>
+  </libs>
+  <tools>
+    <tool usability="5">
+      <name>
+        <full>Gulp
+          <short>Gulp</short>
+        </full>
+        <logo src="img/gulp.svg"/>
+      </name>
+      <version vr="4.0.0 2017"/>
+    </tool>
+    <tool usability="7">
+      <name>
+        <full>Node Package Manager
+          <short>NPM</short>
+        </full>
+        <logo src="img/npm.svg"/>
+      </name>
+      <version vr="6.4.0 2018"/>
+    </tool>
+    <tool usability="10">
+      <name>
+        <full>Emmet Cheat Sheet
+          <short>ECS</short>
+        </full>
+        <logo src="img/ecs.svg"/>
+      </name>
+      <version vr="2.4.3 2016"/>
+    </tool>
+  </tools>
+  <ides>
+    <ide used="yes">
+      <name>Visual Studio</name>
+      <vendor>Microsoft</vendor>
+      <version>15</version>
+      <lngs>C# C++ Visual_Basic J# ASP.NET F#</lngs>
+    </ide>
+    <ide used="yes">
+      <name>Atom IDE</name>
+      <vendor>GitHub</vendor>
+      <version>1</version>
+      <lngs>C# C++ XML HTML CSS PHP JS SQL</lngs>
+    </ide>
+    <ide used="yes">
+      <name>Zend Studio</name>
+      <vendor>Zend Technologies</vendor>
+      <version>10</version>
+      <lngs>PHP</lngs>
+    </ide>
+    <ide used="no">
+      <name>Dev-C++</name>
+      <vendor>Bloodshed Software</vendor>
+      <version>45</version>
+      <lngs>C C++</lngs>
+    </ide>
+  </ides>
+  <browsers>
+    <browser engine="blink">
+      <title>Chrome</title>
+      <company>Google</company>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
+      <number-of-users>234124</number-of-users>
+      <website link="https://www.google.com/intl/pl_ALL/chrome/">Chrome website</website>
+    </browser>
+    <browser engine="gecko">
+      <title>Firefox</title>
+      <company>Mozilla</company>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
+      <number-of-users>843453</number-of-users>
+      <website link="https://www.mozilla.org/pl/firefox/">Firefox website</website>
+    </browser>
+    <browser engine="webkit">
+      <title>Safari</title>
+      <company>Apple</company>
+      <date-and-version date="2017-05-06">1 2 3</date-and-version>
+      <number-of-users>565674</number-of-users>
+      <website link="https://www.apple.com/safari/">Safari website</website>
+    </browser>
+  </browsers>
+  <person id="author">
+    <name>Mateusz</name>
+    <surname>Wasik</surname>
+    <city>Gdańsk</city>
+  </person>
+  <person id="nobody-special">
+    <name>John</name>
+    <surname>Doe</surname>
+    <city>Idontknowville</city>
+  </person>
+</data>
