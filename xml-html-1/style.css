@@ -17,8 +17,6 @@ ul, ol
   list-style: none;
 }
 
-/* Table */
-
 table
 {
   display: block;
@@ -70,8 +68,6 @@ th
 {
   color: rgb(76,175,80);
 }
-
-/* Cards */
 
 .cards
 {
@@ -140,8 +136,6 @@ th
 {
   margin-left: 16px;
 }
-
-/* Gallery */
 
 .gallery
 {
